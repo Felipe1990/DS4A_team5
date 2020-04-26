@@ -1,4 +1,4 @@
-name: eda_general
+name: team_5_ds4a
 channels:
   - conda-forge
   - defaults
@@ -74,8 +74,14 @@ dependencies:
   - pyshp
   - geopandas
   - descartes
+  - ipywidgets
+  - nodejs
   - pip:
     - beautifulsoup4
     - requests
+    - streamlit
+    - tensorflow
+    - keras
 
 # jupyter labextension install @jupyterlab/toc
+# jupyter labextension install @jupyter-widgets/jupyterlab-manager
