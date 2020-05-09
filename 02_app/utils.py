@@ -75,6 +75,19 @@ def convert_geo_to_sector_code(geo_code_output, states_dict, path_to_shapes):
 
     return sector_code
 
+def flat_cell(cell):
+    """
+    flat dictionarys in celss
+
+    """
+    if isinstance(cell, dict):
+        value_cell = list(cell.values())[0]
+        
+    else:
+        value_cell = cell
+    
+    return value_cell
+
 # {'sp',
 #  'es',
 #  'rj',
