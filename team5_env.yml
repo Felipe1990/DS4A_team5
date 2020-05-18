@@ -72,6 +72,7 @@ dependencies:
   - requests
   - folium
   - pyshp
+  - sphinx
   - geopandas
   - descartes
   - ipywidgets
@@ -83,6 +84,7 @@ dependencies:
     - tensorflow
     - keras
     - xgboost
+    - msmb_theme
 
 # jupyter labextension install @jupyterlab/toc
 # jupyter labextension install @jupyter-widgets/jupyterlab-manager
