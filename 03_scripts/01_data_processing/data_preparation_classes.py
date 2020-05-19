@@ -136,3 +136,17 @@ class FinalLabelsWithSector:
     def save_df(self, path_to_save='data/procesada/data_plus_census.pkl'):
         self.df.to_pickle(path_to_save)
 
+
+class DataLabelAndFeatures:
+
+    def __init__(self, path_to_file='data/procesada/data_plus_census.pkl'):
+        self.df = pd.read_pickle(path_to_file)
+
+    def create_pct_total_vars(self, name_total_var, list_vars):
+        self.df[name_total_var] = self.df.loc[:, list_vars].sum(axis=1)
+
+        for var_i in list_vars:
+            self.df[var_i + '_pct'] = self.df[var_i] / self.df[name_total_var]
+
+    def save_df(self, path_to_save='data/procesada/data_plus_census_added_features.pkl'):
+        self.df.to_pickle(path_to_save)
