@@ -34,6 +34,7 @@ def geo_code(address, city):
     
     results = response.json()['results'][0]['locations'][0]['latLng']
     results['state_name'] = response.json()['results'][0]['locations'][0]['adminArea3']
+    results['street_name'] = response.json()['results'][0]['locations'][0]['street']
 
     assert results['lat']!=39.78373, 'Review address or internet connection'
 
@@ -87,30 +88,3 @@ def flat_cell(cell):
         value_cell = cell
     
     return value_cell
-
-# {'sp',
-#  'es',
-#  'rj',
-#  'mg',
-#  'pr',
-#  'rs',
-#  'ba',
-#  'sc',
-#  'al',
-#  'go',
-#  'pe',
-#  'pi',
-#  'am',
-#  'df',
-#  'mt',
-#  'ms',
-#  'ce',
-#  'ma',
-#  'se',
-#  'rn',
-#  'pb',
-#  'to',
-#  'pa',
-#  'ro',
-#  'rr',
-#  'ac'}

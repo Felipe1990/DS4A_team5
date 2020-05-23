@@ -50,7 +50,7 @@ def upload_files_to_s3(keys_aws, files):
         Dictionary with the expected following keys: AWS_ACCESS_KEY, AWS_ACCESS_KEY, S3_BUCKET_NAME
 
     files: list
-        List of relative paths to the files to be uploaded
+        List of relative paths of the files to be uploaded
     """
     
     s3_client = boto3.resource(
