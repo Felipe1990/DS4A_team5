@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>How to &#8212; Property approval  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Processing scripts" href="classes.html" />
+    <link rel="prev" title="Index" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to">
+<h1>How to<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="processing-steps">
+<h2>Processing steps<a class="headerlink" href="#processing-steps" title="Permalink to this headline">¶</a></h2>
+<p>The following steps explain the process of preparing the data before the modelling stage</p>
+<p>Information required:</p>
+<ul class="simple">
+<li><p>Census Data</p></li>
+<li><p>Previous model/analyst decisions</p></li>
+<li><p>Shape files of the Brazilian regions</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Download the data from the S3 bucket. The functions that helps to do this are in <a class="reference internal" href="classes.html#module-utils_aws" title="utils_aws"><code class="xref py py-mod docutils literal notranslate"><span class="pre">utils_aws</span></code></a>. Use of this functions can be reviewed in <cite>download_info</cite></p></li>
+<li><p>Use the shapes in <cite>data/sharp</cite> to add the sector code columns to the data base with the previous model and anlyst decisions. This allows to go from lat/long to sector code, which will be used to join the censun information to each property. The methods to perform this process are in the class <a class="reference internal" href="classes.html#data_preparation_classes.CurrentLabels" title="data_preparation_classes.CurrentLabels"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data_preparation_classes.CurrentLabels</span></code></a> . Use of this class can be reviewed in the script <cite>initial_data_process</cite>.</p></li>
+<li><p>Solve the duplicates in the data base and unify the analyst and model decision to have only one label. The methods to perform this proces are in py:mod:<cite>data_preparation_classes.DataWithDups</cite>. Use of this class can be reviewed in the script <cite>initial_data_process</cite>.</p></li>
+<li><p>Process the census information (featues creation and drop zero variance variables) and joins its information to the processed label data. The methods to perform this process are in the class <a class="reference internal" href="classes.html#data_preparation_classes.FinalLabelsWithSector" title="data_preparation_classes.FinalLabelsWithSector"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data_preparation_classes.FinalLabelsWithSector</span></code></a>. Use of this class can be reviewed in the script <cite>initial_data_process</cite>.</p></li>
+</ol>
+</div>
+<div class="section" id="modelling-steps">
+<h2>Modelling steps<a class="headerlink" href="#modelling-steps" title="Permalink to this headline">¶</a></h2>
+<p>The following steps explain the process of fitting the model based on the information processed previously.</p>
+<p>Information required:</p>
+<ul class="simple">
+<li><p>Processed database with both labels and census information.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Fit the model using the class <a class="reference internal" href="classes.html#fit_model_class.PropertyModel" title="fit_model_class.PropertyModel"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fit_model_class.PropertyModel</span></code></a>.</p></li>
+<li><p>Save the model using the same class from the step before. Use of the class can be reviewed in script <cite>fit_model</cite>.</p></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Property approval</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#processing-steps">Processing steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelling-steps">Modelling steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Processing scripts</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Index</a></li>
+      <li>Next: <a href="classes.html" title="next chapter">Processing scripts</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Felipe Avella, Felipe Tellez, Kaushal Sheth.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/steps_processing.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

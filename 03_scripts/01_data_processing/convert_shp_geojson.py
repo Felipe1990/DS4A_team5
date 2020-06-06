@@ -2,7 +2,7 @@ import shapefile
 from json import dumps
 import os
 
-os.chdir('../data')
+# os.chdir('../data')
 
 # Convert Shapefile to GeoJson
 def shp_to_geojson(shp, geo_json, encoding='latin1'):
@@ -22,21 +22,13 @@ def shp_to_geojson(shp, geo_json, encoding='latin1'):
         f.close()
         
         
-list_files_shp = {folder_i: ['sharp/'+folder_i+'/'+file for file in os.listdir('sharp/'+folder_i) if file.find('shp')>0] for folder_i in os.listdir('sharp')}
-list_files_shp
+# list_files_shp = {folder_i: ['sharp/'+folder_i+'/'+file for file in os.listdir('sharp/'+folder_i) if file.find('shp')>0] for folder_i in os.listdir('sharp')}
+# list_files_shp
 
 # Alternative using geopandas
+# import geopandas as gpd
 
-%%time
-shp_to_geojson('sharp/sc/42SEE250GC_SIR.shp', 'json_shapes/shape_sc.json')
+# census_sector_gpd = gpd.read_file('sharp/sc/42SEE250GC_SIR.shp', encoding='latin1')
+# census_sector_gpd.to_file('json_shapes/shape_sc.json', driver='GeoJSON')
 
-#for est_i, path_i in list_files_shp.items():
-#    shp_to_geojson()
-
-import geopandas as gpd
-
-%%time 
-census_sector_gpd = gpd.read_file('sharp/sc/42SEE250GC_SIR.shp', encoding='latin1')
-census_sector_gpd.to_file('json_shapes/shape_sc.json', driver='GeoJSON')
-
-census_sector_gpd.head(2)
+# census_sector_gpd.head(2)

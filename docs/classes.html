@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Processing scripts &#8212; Property approval  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Processing steps" href="steps_processing.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="processing-scripts">
+<h1>Processing scripts<a class="headerlink" href="#processing-scripts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-utils_aws">
+<span id="download"></span><h2>Download<a class="headerlink" href="#module-utils_aws" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="utils_aws.download_data_team5">
+<code class="sig-prename descclassname">utils_aws.</code><code class="sig-name descname">download_data_team5</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keys_aws</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils_aws.download_data_team5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download all the necesary information from the S3 Bucket</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keys_aws</strong> (<em>dict</em>) – Dictionary with the expected following keys: AWS_ACCESS_KEY, AWS_ACCESS_KEY, S3_BUCKET_NAME</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="utils_aws.upload_files_to_s3">
+<code class="sig-prename descclassname">utils_aws.</code><code class="sig-name descname">upload_files_to_s3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keys_aws</span></em>, <em class="sig-param"><span class="n">files</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils_aws.upload_files_to_s3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads selected files to the S3 Bucket</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keys_aws</strong> (<em>dict</em>) – Dictionary with the expected following keys: AWS_ACCESS_KEY, AWS_ACCESS_KEY, S3_BUCKET_NAME</p></li>
+<li><p><strong>files</strong> (<em>list</em>) – List of relative paths of the files to be uploaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-data_preparation_classes">
+<span id="data-prep"></span><h2>Data prep<a class="headerlink" href="#module-data_preparation_classes" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="data_preparation_classes.CurrentLabels">
+<em class="property">class </em><code class="sig-prename descclassname">data_preparation_classes.</code><code class="sig-name descname">CurrentLabels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.CurrentLabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sector code info to each property</p>
+<dl class="py method">
+<dt id="data_preparation_classes.CurrentLabels.adjust_nas">
+<code class="sig-name descname">adjust_nas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.CurrentLabels.adjust_nas" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.CurrentLabels.create_long_lant_cols">
+<code class="sig-name descname">create_long_lant_cols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.CurrentLabels.create_long_lant_cols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.CurrentLabels.drop_cols">
+<code class="sig-name descname">drop_cols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.CurrentLabels.drop_cols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.CurrentLabels.join_sector_code">
+<code class="sig-name descname">join_sector_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.CurrentLabels.join_sector_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.CurrentLabels.save_df">
+<code class="sig-name descname">save_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_save</span><span class="o">=</span><span class="default_value">'data/procesada/data_with_index.pkl'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.CurrentLabels.save_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="data_preparation_classes.DataForMongo">
+<em class="property">class </em><code class="sig-prename descclassname">data_preparation_classes.</code><code class="sig-name descname">DataForMongo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_file</span><span class="o">=</span><span class="default_value">'data/dados_censitarios_consolidados_todas_variaveis.csv'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataForMongo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare census information to upload to mongo</p>
+<dl class="py method">
+<dt id="data_preparation_classes.DataForMongo.create_pct_total_vars">
+<code class="sig-name descname">create_pct_total_vars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name_total_var</span></em>, <em class="sig-param"><span class="n">list_vars</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataForMongo.create_pct_total_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataForMongo.filter_state">
+<code class="sig-name descname">filter_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataForMongo.filter_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataForMongo.process_census_info">
+<code class="sig-name descname">process_census_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude_columns</span></em>, <em class="sig-param"><span class="n">cat_columns</span></em>, <em class="sig-param"><span class="n">str_columns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataForMongo.process_census_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataForMongo.save_df">
+<code class="sig-name descname">save_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_save</span><span class="o">=</span><span class="default_value">'02_app/data_censo_sp.csv'</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataForMongo.save_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataForMongo.upload_to_mongo">
+<code class="sig-name descname">upload_to_mongo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataForMongo.upload_to_mongo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="data_preparation_classes.DataWithDups">
+<em class="property">class </em><code class="sig-prename descclassname">data_preparation_classes.</code><code class="sig-name descname">DataWithDups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_file</span><span class="o">=</span><span class="default_value">'data/procesada/data_with_index.pkl'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataWithDups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove same addrees duplicates and unify previous model and analyst decisions</p>
+<dl class="py method">
+<dt id="data_preparation_classes.DataWithDups.drop_nas_in_sector">
+<code class="sig-name descname">drop_nas_in_sector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataWithDups.drop_nas_in_sector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataWithDups.print_dups">
+<code class="sig-name descname">print_dups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataWithDups.print_dups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataWithDups.remove_duplicates">
+<code class="sig-name descname">remove_duplicates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataWithDups.remove_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataWithDups.save_df">
+<code class="sig-name descname">save_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_save</span><span class="o">=</span><span class="default_value">'data/procesada/data_with_index_nodups.pkl'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataWithDups.save_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.DataWithDups.unify_decision">
+<code class="sig-name descname">unify_decision</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.DataWithDups.unify_decision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="data_preparation_classes.FinalLabelsWithSector">
+<em class="property">class </em><code class="sig-prename descclassname">data_preparation_classes.</code><code class="sig-name descname">FinalLabelsWithSector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_file</span><span class="o">=</span><span class="default_value">'data/procesada/data_with_index_nodups.pkl'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add features from census</p>
+<dl class="py method">
+<dt id="data_preparation_classes.FinalLabelsWithSector.create_pct_total_vars">
+<code class="sig-name descname">create_pct_total_vars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name_total_var</span></em>, <em class="sig-param"><span class="n">list_vars</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector.create_pct_total_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.FinalLabelsWithSector.drop_zero_variance_variables">
+<code class="sig-name descname">drop_zero_variance_variables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector.drop_zero_variance_variables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.FinalLabelsWithSector.join_census_info">
+<code class="sig-name descname">join_census_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector.join_census_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.FinalLabelsWithSector.load_census_info">
+<code class="sig-name descname">load_census_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_file</span><span class="o">=</span><span class="default_value">'data/dados_censitarios_consolidados_todas_variaveis.csv'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector.load_census_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.FinalLabelsWithSector.process_census_info">
+<code class="sig-name descname">process_census_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude_columns</span></em>, <em class="sig-param"><span class="n">cat_columns</span></em>, <em class="sig-param"><span class="n">str_columns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector.process_census_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="data_preparation_classes.FinalLabelsWithSector.save_df">
+<code class="sig-name descname">save_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_save</span><span class="o">=</span><span class="default_value">'data/procesada/data_plus_census.pkl'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation_classes.FinalLabelsWithSector.save_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-convert_shp_geojson"></span></div>
+<div class="section" id="module-fit_model_class">
+<span id="model-fitting"></span><h2>Model fitting<a class="headerlink" href="#module-fit_model_class" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="fit_model_class.PropertyModel">
+<em class="property">class </em><code class="sig-prename descclassname">fit_model_class.</code><code class="sig-name descname">PropertyModel</code><a class="headerlink" href="#fit_model_class.PropertyModel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fit_model_class.PropertyModel.fit_model_in_validation">
+<code class="sig-name descname">fit_model_in_validation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fit_model_class.PropertyModel.fit_model_in_validation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fit_model_class.PropertyModel.fit_model_whole_data">
+<code class="sig-name descname">fit_model_whole_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fit_model_class.PropertyModel.fit_model_whole_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fit_model_class.PropertyModel.print_model_metrics">
+<code class="sig-name descname">print_model_metrics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fit_model_class.PropertyModel.print_model_metrics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fit_model_class.PropertyModel.save_feature_col_names">
+<code class="sig-name descname">save_feature_col_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features_colnames_path</span><span class="o">=</span><span class="default_value">'var_names.pkl'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fit_model_class.PropertyModel.save_feature_col_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fit_model_class.PropertyModel.save_model">
+<code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_file_name</span><span class="o">=</span><span class="default_value">'acceptance_model.sav'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fit_model_class.PropertyModel.save_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fit_model_class.PropertyModel.split_data_label_features">
+<code class="sig-name descname">split_data_label_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fit_model_class.PropertyModel.split_data_label_features" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Property approval</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="steps_processing.html">Processing steps</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Processing scripts</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="steps_processing.html" title="previous chapter">Processing steps</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Felipe Avella, Felipe Tellez, Kaushal Sheth.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/classes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
